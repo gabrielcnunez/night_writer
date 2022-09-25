@@ -10,7 +10,7 @@ class NightWriter
   def print_reply
     message = File.open(@incoming_text, "r")
     total_characters = message.read.size
-    "Created '#{@translate_to_braille}' containing #{total_characters} characters"
+    p "Created '#{@translate_to_braille}' containing #{total_characters} characters"
   end
 end
 
