@@ -17,7 +17,11 @@ class NightWriter
   end
 
   def write_to_file
-    message = File.open(@incoming_text, "r")
+    new_message = read_file
+    writer = File.open(@translate_to_braille, "w")
+    writer.write(new_message)
   end
+
+
 end
 
