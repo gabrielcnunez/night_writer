@@ -12,6 +12,15 @@ RSpec.describe Alphabet do
       alphabet = Alphabet.new
       
       expect(alphabet.characters["h"]).to eq(["0.", "00", ".."])
+      expect(alphabet.characters["e"]).to eq(["0.", ".0", ".."])
+      expect(alphabet.characters["l"]).to eq(["0.", "0.", "0."])
+      expect(alphabet.characters["o"]).to eq(["0.", ".0", "0."])
+      expect(alphabet.characters[" "]).to eq(["..", "..", ".."])
+      expect(alphabet.characters["w"]).to eq([".0", "00", ".0"])
+      expect(alphabet.characters["r"]).to eq(["0.", "00", "0."])
+      expect(alphabet.characters["d"]).to eq(["00", ".0", ".."])
     end
   end
+
+
 end
