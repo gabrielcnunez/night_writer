@@ -10,8 +10,8 @@ RSpec.describe Alphabet do
 
     it 'has readable attributes' do
       alphabet = Alphabet.new
-
-      expect(alphabet["h"]).to eq(["0.", "00", ".."])
+      
+      expect(alphabet.characters["h"]).to eq(["0.", "00", ".."])
     end
   end
 end
