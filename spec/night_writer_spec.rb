@@ -10,11 +10,10 @@ RSpec.describe NightWriter do
   end
 
   describe '#print_reply' do
-    it 'can print static reply' do
-    end
+    it 'can print a reply based on character numbers' do
+      night_writer = NightWriter.new("message.txt", "braille.txt")
 
-    it 'can print dynamic reply based on character numbers' do
-
+      expect(night_writer.print_reply).to eq("Created 'braille.txt' containing 11 characters")
     end
   end
   
