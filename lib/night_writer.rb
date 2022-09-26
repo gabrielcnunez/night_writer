@@ -7,10 +7,21 @@ class NightWriter
     @translate_to_braille = translate_to_braille
   end
 
-  def print_reply
+  def read_file
     message = File.open(@incoming_text, "r")
-    total_characters = message.read.size
-    p "Created '#{@translate_to_braille}' containing #{total_characters} characters"
+    message.read
   end
+
+  def print_reply
+    p "Created '#{@translate_to_braille}' containing #{read_file.size} characters"
+  end
+
+  def write_to_file
+    new_message = read_file
+    writer = File.open(@translate_to_braille, "w")
+    writer.write(new_message)
+  end
+
+
 end
 
