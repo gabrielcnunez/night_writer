@@ -33,4 +33,13 @@ RSpec.describe NightWriter do
       expect(File.exists?("braille.txt")).to eq(true)
     end
   end
+
+  describe '#translate_message_to_braille' do
+    it 'can translate a message from letters to braille' do
+      night_writer = NightWriter.new("hello_world.txt", "braille.txt")
+      expected = "0.0.0.0.0....00.0.0.00\n00.00.0..0..00.0000..0\n....0.0.0....00.0.0...\n"
+      
+      expect(night_writer.translate_message_to_braille).to eq(expected)
+    end
+  end
 end

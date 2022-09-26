@@ -22,6 +22,10 @@ class NightWriter
     writer.write(new_message)
   end
 
+  def translate_message_to_braille
+    
+  end
+
 
 end
 
