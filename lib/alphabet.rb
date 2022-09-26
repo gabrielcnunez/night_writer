@@ -1,6 +1,6 @@
 class Alphabet
   attr_reader :characters
-  
+
   def initialize
     @characters = {
       "a" => ["0.", "..", ".."],
@@ -31,6 +31,14 @@ class Alphabet
       "z" => ["0.", ".0", "00"],
       " " => ["..", "..", ".."]
     }
+  end
+
+  def convert_to_braille(character)
+    @characters.find do |letter, braille|
+      if character == letter
+        return braille
+      end
+    end
   end
 
 end

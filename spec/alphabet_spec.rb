@@ -22,5 +22,14 @@ RSpec.describe Alphabet do
     end
   end
 
+  describe '#english_to_braille' do
+    it 'can translate a single character' do
+      alphabet = Alphabet.new
+      sing_char = "h"
+
+      expect(alphabet.convert_to_braille(sing_char)).to eq(["0.", "00", ".."])
+    end
+
+  end
 
 end
