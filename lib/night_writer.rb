@@ -1,10 +1,13 @@
-class NightWriter
+require './lib/alphabet'
+
+class NightWriter < Alphabet
   attr_reader :incoming_text,
               :translate_to_braille
               
   def initialize(incoming_text, translate_to_braille)
     @incoming_text = incoming_text
     @translate_to_braille = translate_to_braille
+    super()
   end
 
   def read_file
@@ -23,7 +26,13 @@ class NightWriter
   end
 
   def translate_message_to_braille
-    
+    # WIP
+    braille_message = []
+    read_file.each_char do |character|
+      require 'pry'; binding.pry
+      braille_message << convert_to_braille(character)
+    end
+
   end
 
 
