@@ -53,13 +53,13 @@ class Alphabet
     [line_1.join, line_2.join, line_3.join]
   end
 
-  def braille_wrap(unwrapped_message)
-    return unwrapped_message if unwrapped_message.size <= 240
-
-    require 'pry'; binding.pry
+  def braille_wrap(message_array)
+    # require 'pry'; binding.pry
+    return message_array.join("\n") if message_array.join.size <= 240
+    # WIP
+    # return array of strings for easier iteration, maybe rewrite test
+    # and method for format_braille, and add into translate_to_braille
+    # to allow for this
   end
-  # WIP
-  # return array of strings for easier iteration, maybe rewrite test
-  # and method for format_braille, and add into translate_to_braille
-  # to allow for this
+  
 end

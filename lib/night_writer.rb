@@ -29,9 +29,7 @@ class NightWriter < Alphabet
     read_file.each_char {|character| message << english_to_braille(character)}
     braille_array = format_braille(message)
     braille_wrap(braille_array)
-    # WIP
   end
-
 
 end
 

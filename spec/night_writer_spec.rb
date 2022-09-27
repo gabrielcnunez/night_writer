@@ -33,7 +33,7 @@ RSpec.describe NightWriter do
 
   describe '#translate_to_braille' do
     it 'can translate a message from letters to braille' do
-      expected = "0.0.0.0.0....00.0.0.00\n00.00.0..0..00.0000..0\n....0.0.0....00.0.0...\n"
+      expected = "0.0.0.0.0....00.0.0.00\n00.00.0..0..00.0000..0\n....0.0.0....00.0.0..."
       
       expect(@night_writer.translate_to_braille).to eq(expected)
     end
