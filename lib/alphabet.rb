@@ -35,9 +35,7 @@ class Alphabet
 
   def english_to_braille(character)
     @characters.find do |letter, braille|
-      if character == letter
-        return braille
-      end
+      return braille if character == letter
     end
   end
 
@@ -64,9 +62,7 @@ class Alphabet
 
   def braille_to_english(character)
     @characters.find do |letter, braille|
-      if character == braille
-        return letter
-      end
+      return letter if character == braille
     end
   end
   
