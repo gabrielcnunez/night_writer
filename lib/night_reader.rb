@@ -24,5 +24,12 @@ class NightReader < Alphabet
     writer = File.open(@outgoing_text, "w")
     writer.write(new_message)
   end
+
+  def translate_to_english
+    message = []
+    # Will need helper method to take braille lines and convert to array
+    # of three strings
+    # WIP
+  end
   
 end
