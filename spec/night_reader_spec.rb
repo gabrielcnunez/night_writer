@@ -30,4 +30,31 @@ RSpec.describe NightReader do
     end
   end
 
+  describe '#write_to_file' do
+    it 'can write a new file' do
+      @night_reader.write_to_file
+
+      expect(File.exists?("original_message.txt")).to eq(true)
+    end
+  end
+
+  # describe '#convert_braille_to_array' do
+  #   it 'can convert braille cells to arrays of three strings' do
+  #     expect(@night_reader.convert_braille_to_array).to eq([["0.", "00", ".."], ["0.", ".0", ".."],
+  #                                                           ["0.", "0.", "0."], ["0.", "0.", "0."],
+  #                                                           ["0.", ".0", "0."], ["..", "..", ".."],
+  #                                                           [".0", "00", ".0"], ["0.", ".0", "0."],
+  #                                                           ["0.", "00", "0."], ["0.", "0.", "0."],
+  #                                                           ["00", ".0", ".."]])
+  #   end
+  # end
+
+  # describe '#translate_to_english' do
+  #   it 'can translate a message from braille cells to letters' do
+  #     expected = 'hello world'
+
+  #     expect(@night_reader.translate_to_english).to eq(expected)
+  #   end
+  # end
+
 end

@@ -60,9 +60,9 @@ class Alphabet
     wrapped_lines.join
   end
 
-  def braille_to_english(character)
+  def braille_to_english(cell)
     @characters.find do |letter, braille|
-      return letter if character == braille
+      return letter if cell == braille
     end
   end
   
