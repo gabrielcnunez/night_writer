@@ -62,7 +62,7 @@ class Alphabet
 
   def braille_to_english(cell)
     @characters.find do |letter, braille|
-      return letter if character == braille
+      return letter if cell == braille
     end
   end
   
