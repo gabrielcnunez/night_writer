@@ -28,11 +28,8 @@ class NightWriter < Alphabet
   def translate_message_to_braille
     # WIP
     braille_message = []
-    read_file.each_char do |character|
-      require 'pry'; binding.pry
-      braille_message << convert_to_braille(character)
-    end
-
+    read_file.each_char {|character| braille_message << english_to_braille(character)}
+    # format_braille(braille_message)
   end
 
 

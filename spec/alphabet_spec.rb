@@ -27,7 +27,7 @@ RSpec.describe Alphabet do
       alphabet = Alphabet.new
       sing_char = "h"
 
-      expect(alphabet.convert_to_braille(sing_char)).to eq(["0.", "00", ".."])
+      expect(alphabet.english_to_braille(sing_char)).to eq(["0.", "00", ".."])
     end
 
   end
