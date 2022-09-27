@@ -50,7 +50,16 @@ class Alphabet
       line_2 << braille_char[1]
       line_3 << braille_char[2]
     end
-    "#{line_1.join}\n#{line_2.join}\n#{line_3.join}\n"
+    [line_1.join, line_2.join, line_3.join]
   end
 
+  def braille_wrap(message_array)    
+    break_80_chars = message_array.map {|line| line.scan(/.{1,80}/m)}
+    wrapped_lines = []
+    0.upto(break_80_chars[0].length-1) do |i|
+      wrapped_lines << break_80_chars[0][i] + "\n" + break_80_chars[1][i] + "\n" + break_80_chars[2][i] + "\n"
+    end
+    wrapped_lines.join
+  end
+  
 end

@@ -31,12 +31,30 @@ RSpec.describe Alphabet do
   end
 
   describe '#format_braille' do
-    it 'can format braille array to three lines of strings' do
+    it 'can format braille array to three arrays of strings' do
       raw_hello = [["0.", "00", ".."], ["0.", ".0", ".."], ["0.", "0.", "0."],
                    ["0.", "0.", "0."], ["0.", ".0", "0."]]
-      formatted_hello = "0.0.0.0.0.\n00.00.0..0\n....0.0.0.\n"
+      formatted_hello = ["0.0.0.0.0.", "00.00.0..0", "....0.0.0."]
       expect(@alphabet.format_braille(raw_hello)).to eq(formatted_hello)
     end
-  end    
+  end
+  
+  describe '#braille_wrap' do
+    it 'can wrap message over 80 braille characters to multiple lines' do
+      raw_message = [
+                    ".00.00...00.0.0.0.00...0..000.0.00000...0.0....0.0...00.0...0.000....00.0....00.000..0",
+                    "0000.0..0.00.0..0..0..0.....00...000.0..00.0..0.0...0000.0...0.0.0..0000.0..0.......0.",
+                    ".0..00..0...0.000...............0...............0...0.......0.0......0..0...0.00..0.0."]
+
+      wrapped_message = ".00.00...00.0.0.0.00...0..000.0.00000...0.0....0.0...00.0...0.000....00.0....00.\n" +
+                          "0000.0..0.00.0..0..0..0.....00...000.0..00.0..0.0...0000.0...0.0.0..0000.0..0...\n" +
+                          ".0..00..0...0.000...............0...............0...0.......0.0......0..0...0.00\n" +
+                          "000..0\n" +
+                          "....0.\n" +
+                          "..0.0.\n"
+                      
+      expect(@alphabet.braille_wrap(raw_message)).to eq(wrapped_message)
+    end
+  end
 
 end
