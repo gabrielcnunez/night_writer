@@ -18,5 +18,11 @@ class NightReader < Alphabet
   def print_reply
     p "Created '#{@outgoing_text}' containing #{read_file.size / 6} characters"
   end
+
+  def write_to_file
+    new_message = read_file
+    writer = File.open(@outgoing_text, "w")
+    writer.write(new_message)
+  end
   
 end
