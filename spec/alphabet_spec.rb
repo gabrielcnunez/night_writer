@@ -39,7 +39,7 @@ RSpec.describe Alphabet do
     end
   end
   
-  describe '#unwrapped_message' do
+  describe '#braille_wrap' do
     it 'can wrap message over 80 braille characters to multiple lines' do
       raw_message = ".00.00...00.0.0.0.00...0..000.0.00000...0.0....0.0...00.0...0.000....00.0....00.000..0\n" +
                     "0000.0..0.00.0..0..0..0.....00...000.0..00.0..0.0...0000.0...0.0.0..0000.0..0.......0.\n" +

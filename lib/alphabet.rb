@@ -50,8 +50,7 @@ class Alphabet
       line_2 << braille_char[1]
       line_3 << braille_char[2]
     end
-    "#{line_1.join}\n#{line_2.join}\n#{line_3.join}\n"
-    # WIP
+    [line_1.join, line_2.join, line_3.join]
   end
 
   def braille_wrap(unwrapped_message)
