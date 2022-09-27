@@ -53,13 +53,13 @@ class Alphabet
     [line_1.join, line_2.join, line_3.join]
   end
 
-  def braille_wrap(message_array)
-    # require 'pry'; binding.pry
-    return message_array.join("\n") if message_array.join.size <= 240
-    # WIP
-    # return array of strings for easier iteration, maybe rewrite test
-    # and method for format_braille, and add into translate_to_braille
-    # to allow for this
+  def braille_wrap(message_array)    
+    break_80_chars = message_array.map {|line| line.scan(/.{1,80}/m)}
+    wrapped_lines = []
+    0.upto(break_80_chars[0].length-1) do |i|
+      wrapped_lines << break_80_chars[0][i] + "\n" + break_80_chars[1][i] + "\n" + break_80_chars[2][i] + "\n"
+    end
+    wrapped_lines.join
   end
   
 end
