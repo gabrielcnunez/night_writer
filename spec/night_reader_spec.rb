@@ -38,20 +38,23 @@ RSpec.describe NightReader do
     end
   end
 
-  describe 'convert_braille_cell_to_array' do
-    it 'can convert a braille cell to array of three strings' do
-      night_reader = NightReader.new("test_h_braille.txt", "original_message.txt")
+  # describe '#convert_braille_to_array' do
+  #   it 'can convert braille cells to arrays of three strings' do
+  #     expect(@night_reader.convert_braille_to_array).to eq([["0.", "00", ".."], ["0.", ".0", ".."],
+  #                                                           ["0.", "0.", "0."], ["0.", "0.", "0."],
+  #                                                           ["0.", ".0", "0."], ["..", "..", ".."],
+  #                                                           [".0", "00", ".0"], ["0.", ".0", "0."],
+  #                                                           ["0.", "00", "0."], ["0.", "0.", "0."],
+  #                                                           ["00", ".0", ".."]])
+  #   end
+  # end
 
-      expect(night_reader.convert_braille_cell_to_array).to eq([["0.", "00", ".."]])
-    end
-  end
+  # describe '#translate_to_english' do
+  #   it 'can translate a message from braille cells to letters' do
+  #     expected = 'hello world'
 
-  describe '#translate_to_english' do
-    xit 'can translate a message from braille cells to letters' do
-      expected = 'hello world'
-
-      expect(@night_reader.translate_to_english).to eq(expected)
-    end
-  end
+  #     expect(@night_reader.translate_to_english).to eq(expected)
+  #   end
+  # end
 
 end

@@ -25,11 +25,20 @@ class NightReader < Alphabet
     writer.write(new_message)
   end
 
-  def translate_to_english
-    message = []
-    # Will need helper method to take braille lines and convert to array
-    # of three strings
-    # WIP
-  end
+  # def convert_braille_to_array
+  #   split_braille = read_file.split("\n")
+  #   
+  #   WIP
+  #   Unable to figure out how to convert the split up braille, which
+  #   appears exactly as in the translate_to_braille(except in array form),
+  #   into the correct array formatting for translation back to text
+  # end
+
+  # def translate_to_english
+  #   message = []
+  #   # Will need helper method to take braille lines and convert to array
+  #   # of three strings
+  #   # WIP
+  # end
   
 end
