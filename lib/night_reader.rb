@@ -1,10 +1,13 @@
-class NightReader
+require './lib/alphabet'
+
+class NightReader < Alphabet
   attr_reader :incoming_braille,
               :outgoing_text
 
   def initialize(incoming_braille, outgoing_text)
     @incoming_braille = incoming_braille
     @outgoing_text = outgoing_text
+    super()
   end
 
   def read_file
