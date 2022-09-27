@@ -30,4 +30,12 @@ RSpec.describe NightReader do
     end
   end
 
+  describe '#write_to_file' do
+    it 'can write a new file' do
+      @night_reader.write_to_file
+
+      expect(File.exists?("original_text.txt")).to eq(true)
+    end
+  end
+
 end
