@@ -24,4 +24,10 @@ RSpec.describe NightReader do
     end
   end
 
+  describe '#print_reply' do
+    it 'can print a reply based on character numbers' do
+      expect(@night_reader.print_reply).to eq("Created 'original_message.txt' containing 11 characters")
+    end
+  end
+
 end
