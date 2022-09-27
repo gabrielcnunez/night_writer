@@ -58,10 +58,10 @@ RSpec.describe Alphabet do
   end
 
   describe '#braille_to_english' do
-    it 'can translate a single braille character' do
-      sing_braille = ["0.", "00", ".."]
+    it 'can translate a single braille cell' do
+      sing_cell = ["0.", "00", ".."]
 
-      expect(@alphabet.braille_to_english(sing_braille)).to eq("h")
+      expect(@alphabet.braille_to_english(sing_cell)).to eq("h")
     end
   end
 
