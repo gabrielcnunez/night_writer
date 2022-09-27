@@ -51,6 +51,16 @@ class Alphabet
       line_3 << braille_char[2]
     end
     "#{line_1.join}\n#{line_2.join}\n#{line_3.join}\n"
+    # WIP
   end
 
+  def braille_wrap(unwrapped_message)
+    return unwrapped_message if unwrapped_message.size <= 240
+
+    require 'pry'; binding.pry
+  end
+  # WIP
+  # return array of strings for easier iteration, maybe rewrite test
+  # and method for format_braille, and add into translate_to_braille
+  # to allow for this
 end
