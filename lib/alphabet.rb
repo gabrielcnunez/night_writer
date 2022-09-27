@@ -61,5 +61,13 @@ class Alphabet
     end
     wrapped_lines.join
   end
+
+  def braille_to_english(character)
+    @characters.find do |letter, braille|
+      if character == braille
+        return letter
+      end
+    end
+  end
   
 end
