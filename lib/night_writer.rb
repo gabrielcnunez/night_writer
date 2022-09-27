@@ -20,9 +20,8 @@ class NightWriter < Alphabet
   end
 
   def write_to_file
-    new_message = read_file
     writer = File.open(@outgoing_braille, "w")
-    writer.write(new_message)
+    writer.write(translate_to_braille)
   end
 
   def translate_to_braille
