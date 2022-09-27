@@ -28,7 +28,15 @@ RSpec.describe Alphabet do
 
       expect(@alphabet.english_to_braille(sing_char)).to eq(["0.", "00", ".."])
     end
-
   end
+
+  describe '#format_braille' do
+    it 'can format braille array to three lines of strings' do
+      raw_hello = [["0.", "00", ".."], ["0.", ".0", ".."], ["0.", "0.", "0."],
+                   ["0.", "0.", "0."], ["0.", ".0", "0."]]
+      formatted_hello = "0.0.0.0.0.\n00.00.0..0\n....0.0.0.\n"
+      expect(@alphabet.format_braille(raw_hello)).to eq(formatted_hello)
+    end
+  end    
 
 end
