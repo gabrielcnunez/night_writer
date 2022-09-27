@@ -11,5 +11,9 @@ class NightReader
     text = File.open(@incoming_braille, "r")
     text.read
   end
+
+  def print_reply
+    p "Created '#{@outgoing_text}' containing #{read_file.size / 6} characters"
+  end
   
 end
