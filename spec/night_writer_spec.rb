@@ -9,6 +9,11 @@ RSpec.describe NightWriter do
     it 'exists' do
       expect(@night_writer).to be_an_instance_of(NightWriter)
     end
+
+    it 'has readable attributes' do
+      expect(@night_writer.incoming_text).to eq("hello_world.txt")
+      expect(@night_writer.outgoing_braille).to eq("braille.txt")
+    end
   end
 
   describe '#read_file' do
