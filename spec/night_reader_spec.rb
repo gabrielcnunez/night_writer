@@ -16,6 +16,12 @@ RSpec.describe NightReader do
     end
   end
 
-
+  describe '#read_file' do
+    it 'can read a file' do
+      expect(@night_reader.read_file).to eq("0.0.0.0.0....00.0.0.00\n" +
+                                            "00.00.0..0..00.0000..0\n" +
+                                            "....0.0.0....00.0.0...\n")
+    end
+  end
 
 end
