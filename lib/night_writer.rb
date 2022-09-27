@@ -11,8 +11,8 @@ class NightWriter < Alphabet
   end
 
   def read_file
-    message = File.open(@incoming_text, "r")
-    message.read
+    text = File.open(@incoming_text, "r")
+    text.read
   end
 
   def print_reply
@@ -27,9 +27,9 @@ class NightWriter < Alphabet
 
   def translate_message_to_braille
     # WIP
-    braille_message = []
-    read_file.each_char {|character| braille_message << english_to_braille(character)}
-    # format_braille(braille_message)
+    message = []
+    read_file.each_char {|character| message << english_to_braille(character)}
+    # format_braille(message)
   end
 
 
